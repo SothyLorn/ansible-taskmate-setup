@@ -1,0 +1,8 @@
+---
+# tasks file for ansible/roles/taskmate
+- name: start taskmate projects
+  docker_container:
+    name: taskmate
+    image: sothy/taskmate
+    ports:
+      - "8000:8000"

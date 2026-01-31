@@ -1,0 +1,43 @@
+---
+# tasks file for ansible/roles/droplets
+- name: Ensure a SSH key is present
+  community.digitalocean.digital_ocean:
+    state: present
+    command: ssh
+    name: sothy
+    api_token: "{{do_token}}" 
+  register: my_ssh
+- debug:
+    msg: "ID is {{ my_ssh}}"
+- debug:
+    msg: "ssh_key is {{ my_ssh.ssh_key}}"
+- debug:
+    msg: "ID is {{ my_ssh.ssh_key.id }}"
+- debug:
+    msg: "{{ my_ssh.ssh_key.public_key }}"
+- name: Create a new Droplet
+  community.digitalocean.digital_ocean_droplet:
+    state: present
+    ssh_keys: ['{{ my_ssh.ssh_key.id }}']
+    name: "{{ item }}"
+    unique_name: "true"
+    oauth_token: "{{do_token}}"
+    size: s-2vcpu-4gb
+    region: sgp1
+    image: ubuntu-24-04-x64
+    #image: docker-20-04
+    wait_timeout: 500
+  loop:
+    - taskmate-server
+  register: droplet_result
+- name: Display droplet public IP
+  debug:
+    msg: "Droplet IP: {{ droplet_result.results[0].data.droplet.networks.v4[0].ip_address }}"
+
+- name: Create custom hosts file
+  copy:
+    content: |
+      [taskmate]
+      taskmate-server ansible_host={{ droplet_result.results[0].data.droplet.networks.v4[0].ip_address }} ansible_ssh_user=root
+    dest: /Users/sothy.lorn/ansible-demo/ansible/custom_hosts
+  delegate_to: localhost

@@ -1,0 +1,29 @@
+---
+# tasks file for ansible/roles/users
+- name: Create group devops
+  group:
+    name: devops
+    gid: 1009
+    state: present
+
+- name: Create user devops
+  user:
+    name: devops
+    uid: 1009
+    groups: devops
+    append: yes
+    shell: /bin/bash
+    state: present
+  register: user_data
+- name: add user to sudo without password 
+  copy: 
+    content: "devops ALL=(ALL) NOPASSWD:ALL"
+    dest: /etc/sudoers.d/devops
+    validate: "visudo -cf %s"
+- name: Set authorized keys on devops
+  authorized_key:
+    user: devops
+    key: "{{ lookup('file', 'authorized_keys/devops.keys') }}"
+    exclusive: yes
+    manage_dir: yes
+    state: present

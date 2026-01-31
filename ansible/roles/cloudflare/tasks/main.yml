@@ -1,0 +1,34 @@
+---
+# tasks file for ansible/roles/cloudflare
+- name: Create a test.example.net A record to point to 127.0.0.1
+  community.general.cloudflare_dns:
+    zone: sothy.site
+    record: "{{ website.split('.')[0] }}"
+    type: A
+    value: "{{ ansible_host }}"
+    account_email: "sothylorn14.kh@gmail.com"
+    account_api_key: "b180ad0e058c4c00bcfc13f925b91b1a5575c"
+
+# - name: Install Certbot Cloudflare
+#   package: 
+#     name: "{{ item }}"
+#     state: present
+#   loop:
+#     - certbot 
+#     - python3-certbot-nginx
+# - name: Create Certbot folder - /etc/letsencrypt
+#   file:
+#     path: /etc/letsencrypt
+#     state: directory
+#     owner: root
+#     group: root
+#     mode: 0700
+# - name: Certbot | Generate Certificate
+#   command: certbot --nginx --agree-tos -m sothylorn14.kh@gmail.com -d nginx-demo-4.sothy.tech
+#   args:
+#     creates: /etc/letsencrypt/renewal/nginx-demo-4.sothy.tech.conf
+# - name: Check Certbot File - post_hook
+#   lineinfile:
+#     dest: /etc/letsencrypt/renewal/nginx-demo-4.sothy.tech.conf
+#     line: "post_hook = /bin/systemctl restart nginx.service"
+#     regexp: "^post_hook ="

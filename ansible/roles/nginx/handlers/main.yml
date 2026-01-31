@@ -1,0 +1,10 @@
+---
+# handlers file for ansible/roles/nginx
+- name: Start Service
+  service:
+    name: nginx
+    state: started
+- name: restart nginx
+  service: 
+    name: nginx
+    state: restarted

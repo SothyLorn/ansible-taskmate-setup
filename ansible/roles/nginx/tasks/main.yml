@@ -1,0 +1,22 @@
+---
+- name: Run the equivalent of "apt-get update" as a separate step
+  ansible.builtin.apt:
+    update_cache: yes
+- name: Install nginx
+  apt:
+    name: "{{item}}"
+    state: present
+  with_items: 
+    - nginx
+    - net-tools
+    - nano
+  notify: Start Service
+
+- name: copy nginx configure 
+  template: 
+    src: nginx.conf.j2
+    dest: /etc/nginx/conf.d/test.conf
+    owner: root
+    group: root
+    mode: '0644'
+  notify: restart nginx

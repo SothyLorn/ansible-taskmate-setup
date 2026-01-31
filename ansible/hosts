@@ -1,0 +1,9 @@
+localhost ansible_connection=local 
+
+[dev]
+app-dev ansible_host=139.59.250.222 ansible_ssh_user=root
+app1-dev ansible_host=159.223.61.242 ansible_ssh_user=root
+
+
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3

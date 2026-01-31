@@ -1,0 +1,8 @@
+---
+- hosts: taskmate-server
+  roles: 
+    - users
+    - docker
+    - taskmate
+    - cloudflare
+    - nginx
