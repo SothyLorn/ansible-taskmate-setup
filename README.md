@@ -30,16 +30,12 @@ Steps to Generate DigitalOcean API Token (Full Access)
 - Generate New Token with Full Access
 
     In the API page
-
       => Look for the "Tokens/Keys" tab or "Personal Access Tokens" section
       => Click the "Generate New Token" button
 
-
     Configure Token Settings
-
       => Token Name: Enter a descriptive name (e.g., "Jenkins-Ansible-Full-Access" or "Automation-Full-Access")
       => Expiration: Choose expiration period:
-
       => 30 days (Recommended for security)
       => 60 days
       => 90 days
@@ -60,13 +56,11 @@ Steps to Generate DigitalOcean API Token (Full Access)
     => Click "Generate Token" button
 - Copy and Save Your Token Immediately
     ⚠️ CRITICAL
-
       => The token will be displayed only once
       => Copy the entire token immediately
       => Store it in a secure location right away
       => Once you navigate away, you'll never see it again
       => If lost, you must delete this token and create a new one
-
       => Full Access Token Example Format:
           ```dop_v1_1234567890abcdef1234567890abcdef1234567890abcdef1234567890ab```
 
@@ -75,16 +69,17 @@ Steps to Generate DigitalOcean API Token (Full Access)
 Steps to View SSH Key Names in DigitalOcean1. Log in to DigitalOcean
   => Go to https://cloud.digitalocean.com/
   => Sign in with your DigitalOcean account credentials
-  - Navigate to SSH Keys SettingsMethod 1 (Direct)
+  Navigate to SSH Keys Settings
+    Method 1 (Direct)
       => Click on "Settings" in the left sidebar menu
       => Click on "Security" tab
       => Scroll down to the "SSH keys" section
-      Method 2 (Quick Access):
-        => Click on your profile/avatar in the top right corner
-        => Select "Settings" from the dropdown
-        => Navigate to "Security" tab
-        => Find "SSH keys" section
-  - View Your SSH KeysIn the SSH keys section, you'll see a list of all your SSH keys with:
+    Method 2 (Quick Access)
+      => Click on your profile/avatar in the top right corner
+      => Select "Settings" from the dropdown
+      => Navigate to "Security" tab
+      => Find "SSH keys" section
+   View Your SSH KeysIn the SSH keys section, you'll see a list of all your SSH keys with:
         => Name - The name you gave to the SSH key (e.g., "My Laptop", "Jenkins Server", "Personal MacBook")
         => Fingerprint - Unique identifier for the key
         => Added - When the key was added
