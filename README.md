@@ -127,6 +127,7 @@ Steps to Get Cloudflare Global API Key1. Log in to Cloudflare
       The key is a long string of letters and numbers
       Example format:
         a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8
+    
 II. Run ansible playbook
 ```bash
 ansible-playbook ansible/setup-server.yml -i ansible/hosts
