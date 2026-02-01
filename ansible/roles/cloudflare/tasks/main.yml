@@ -2,12 +2,12 @@
 # tasks file for ansible/roles/cloudflare
 - name: Create a test.example.net A record to point to 127.0.0.1
   community.general.cloudflare_dns:
-    zone: sothy.site
+    zone: "{{ website.split('.')[1] }}.{{ website.split('.')[2] }}"
     record: "{{ website.split('.')[0] }}"
     type: A
     value: "{{ ansible_host }}"
-    account_email: "sothylorn14.kh@gmail.com"
-    account_api_key: "b180ad0e058c4c00bcfc13f925b91b1a5575c"
+    account_email: "{{cloudflare_email}}"
+    account_api_key: "{{cloudflare_api_token}}"
 
 # - name: Install Certbot Cloudflare
 #   package: 

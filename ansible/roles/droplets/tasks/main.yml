@@ -4,8 +4,8 @@
   community.digitalocean.digital_ocean:
     state: present
     command: ssh
-    name: sothy
-    api_token: "{{do_token}}" 
+    name: "{{ do_ssh_key }}"
+    api_token: "{{ do_token }}" 
   register: my_ssh
 - debug:
     msg: "ID is {{ my_ssh}}"
