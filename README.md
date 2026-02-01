@@ -90,6 +90,13 @@ Steps to View SSH Key Names in DigitalOcean1. Log in to DigitalOcean
         Date Added - When the key was added
 
 3. CloudFlare Account Email & Token
+File: ```ansible/roles/cloudflare/defaults/main.yml```
+```bash
+---
+# defaults file for ansible/roles/cloudflare
+cloudflare_email: "your_cloud_flare_acccount_email"
+cloudflare_api_token: ""
+```
 Steps to Get Cloudflare Global API Key1. Log in to Cloudflare
   Go to https://dash.cloudflare.com/
   Sign in with your Cloudflare account credentials
@@ -120,3 +127,10 @@ Steps to Get Cloudflare Global API Key1. Log in to Cloudflare
       The key is a long string of letters and numbers
       Example format:
         a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8
+II. Run ansible playbook
+```bash
+ansible-playbook ansible/setup-server.yml -i ansible/hosts
+```
+```bash
+ansible-playbook ansible/setup-taskmate.yml -i ansible/custom_hosts -e website=demo-ansible.sothy.site
+```
