@@ -1,4 +1,5 @@
 Noted: Please clone/fork this project to your personal github/gitlab account first
+```git clone https://github.com/SothyLorn/ansible-taskmate-setup.git```
 
 I. Update environment variables or File 
 1. DigitalOcean Token
