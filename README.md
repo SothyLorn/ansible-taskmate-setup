@@ -69,17 +69,17 @@ Steps to Generate DigitalOcean API Token (Full Access)
 Steps to View SSH Key Names in DigitalOcean1. Log in to DigitalOcean
   => Go to https://cloud.digitalocean.com/
   => Sign in with your DigitalOcean account credentials
-  Navigate to SSH Keys Settings
-    Method 1 (Direct)
+  * Navigate to SSH Keys Settings
+    * Method 1 (Direct)
       => Click on "Settings" in the left sidebar menu
       => Click on "Security" tab
       => Scroll down to the "SSH keys" section
-    Method 2 (Quick Access)
+    * Method 2 (Quick Access)
       => Click on your profile/avatar in the top right corner
       => Select "Settings" from the dropdown
       => Navigate to "Security" tab
       => Find "SSH keys" section
-   View Your SSH KeysIn the SSH keys section, you'll see a list of all your SSH keys with:
+   * View Your SSH KeysIn the SSH keys section, you'll see a list of all your SSH keys with:
         => Name - The name you gave to the SSH key (e.g., "My Laptop", "Jenkins Server", "Personal MacBook")
         => Fingerprint - Unique identifier for the key
         => Added - When the key was added
@@ -95,19 +95,20 @@ cloudflare_api_token: ""
 Steps to Get Cloudflare Global API Key1. Log in to Cloudflare
   => Go to https://dash.cloudflare.com/
   => Sign in with your Cloudflare account credentials
-  - Navigate to API Tokens PageMethod 1 (Direct)
+  * Navigate to API Tokens Page
+    * Method 1 (Direct)
       => Click on your profile icon in the top right corner
       => Select "My Profile"
       => Click on "API Tokens" in the left sidebar
-      => Method 2 (Quick Link):
-          => Go directly to: https://dash.cloudflare.com/profile/api-tokens
-  - Locate Global API KeyOn the API Tokens page, you'll see two sections:
+    * Method 2 (Quick Link)
+      => Go directly to: https://dash.cloudflare.com/profile/api-tokens
+  * Locate Global API KeyOn the API Tokens page, you'll see two sections:
       => API Tokens (newer, more secure method)
       => API Keys (legacy method)
       => Scroll down to the "API Keys" section and find:
       => Global API Key
       => Origin CA Key
-  - View Your Global API Key
+  * View Your Global API Key
       => Find "Global API Key" row
       => It will show as "Global API Key" with a "View" button
       => Click "View" button
@@ -121,7 +122,7 @@ Steps to Get Cloudflare Global API Key1. Log in to Cloudflare
       => The key is a long string of letters and numbers
       => Example format:
           ```a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8```
-
+    
 3. SSH Key for devops user
 File: ```ansible/roles/users/files/authorized_keys/devops.keys```
 => Please copy your laptop public ssh key & jenkins public ssh key paste to this file
