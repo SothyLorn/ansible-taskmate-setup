@@ -29,13 +29,13 @@ Steps to Generate DigitalOcean API Token (Full Access)
 
 - Generate New Token with Full Access
 
-    In the API page:
+    In the API page
 
       => Look for the "Tokens/Keys" tab or "Personal Access Tokens" section
       => Click the "Generate New Token" button
 
 
-    Configure Token Settings:
+    Configure Token Settings
 
       => Token Name: Enter a descriptive name (e.g., "Jenkins-Ansible-Full-Access" or "Automation-Full-Access")
       => Expiration: Choose expiration period:
@@ -48,7 +48,7 @@ Steps to Generate DigitalOcean API Token (Full Access)
 
 - Set Permissions (IMPORTANT - Full Access):
 
-    ✅ Check BOTH boxes:
+    ✅ Check BOTH boxes
 
     ☑️ Read - Allows viewing resources
     ☑️ Write - Allows creating, modifying, and deleting resources
@@ -56,10 +56,10 @@ Steps to Generate DigitalOcean API Token (Full Access)
 
     => This gives full access to manage all DigitalOcean resources
 
-- Generate Token:
+- Generate Token
     => Click "Generate Token" button
 - Copy and Save Your Token Immediately
-    ⚠️ CRITICAL:
+    ⚠️ CRITICAL
 
       => The token will be displayed only once
       => Copy the entire token immediately
