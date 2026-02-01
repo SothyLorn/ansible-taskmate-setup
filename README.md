@@ -1,6 +1,6 @@
 Noted: Please clone/fork this project to your personal github/gitlab account first
 
-I. Update environment variables
+I. Update environment variables or File 
 1. DigitalOcean Token
 File: ```ansible/roles/droplets/defaults/main.yml```
 ```bash
@@ -75,7 +75,7 @@ Steps to Generate DigitalOcean API Token (Full Access)
 Steps to View SSH Key Names in DigitalOcean1. Log in to DigitalOcean
   => Go to https://cloud.digitalocean.com/
   => Sign in with your DigitalOcean account credentials
-  - Navigate to SSH Keys SettingsMethod 1 (Direct):
+  - Navigate to SSH Keys SettingsMethod 1 (Direct)
       => Click on "Settings" in the left sidebar menu
       => Click on "Security" tab
       => Scroll down to the "SSH keys" section
@@ -89,7 +89,7 @@ Steps to View SSH Key Names in DigitalOcean1. Log in to DigitalOcean
         => Fingerprint - Unique identifier for the key
         => Added - When the key was added
 
-3. CloudFlare Account Email & Token
+2. CloudFlare Account Email & Token
 File: ```ansible/roles/cloudflare/defaults/main.yml```
 ```bash
 ---
@@ -100,7 +100,7 @@ cloudflare_api_token: ""
 Steps to Get Cloudflare Global API Key1. Log in to Cloudflare
   => Go to https://dash.cloudflare.com/
   => Sign in with your Cloudflare account credentials
-  - Navigate to API Tokens PageMethod 1 (Direct):
+  - Navigate to API Tokens PageMethod 1 (Direct)
       => Click on your profile icon in the top right corner
       => Select "My Profile"
       => Click on "API Tokens" in the left sidebar
@@ -126,7 +126,10 @@ Steps to Get Cloudflare Global API Key1. Log in to Cloudflare
       => The key is a long string of letters and numbers
       => Example format:
           ```a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8```
-    
+
+3. SSH Key for devops user
+File: ```ansible/roles/users/files/authorized_keys/devops.keys```
+=> Please copy your laptop public ssh key & jenkins public ssh key paste to this file
 II. Run ansible playbook
 ```bash
 ansible-playbook ansible/setup-server.yml -i ansible/hosts
