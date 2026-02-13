@@ -4,6 +4,8 @@ Prerequisite:
 - ansible: ``` pip3 install ansible --break-system-packages```
 - DigitalOcean API Token (full access)
 - Check your python3 path (```which python3```) then put it in ./hosts (ansible_python_interpreter=/usr/bin/python3)
+- ```ansible-galaxy collection install community.digitalocean```
+- ```pip3 install dopy>=0.3.2 --break-system-packages```
 
 Please clone/fork this project to your personal github/gitlab account first
 ```git clone https://github.com/SothyLorn/ansible-taskmate-setup.git```
