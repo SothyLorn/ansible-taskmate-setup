@@ -39,5 +39,5 @@
     content: |
       [taskmate]
       taskmate-server ansible_host={{ droplet_result.results[0].data.droplet.networks.v4[0].ip_address }} ansible_ssh_user=root
-    dest: "{{ playbook_dir }}/ansible/custom_hosts"
+    dest: "{{ playbook_dir }}/custom_hosts"
   delegate_to: localhost
