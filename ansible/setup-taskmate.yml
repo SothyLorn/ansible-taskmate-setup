@@ -1,5 +1,6 @@
 ---
 - hosts: taskmate-server
+  gather_facts: yes
   roles: 
     - users
     - docker
