@@ -1,4 +1,11 @@
-Noted: Please clone/fork this project to your personal github/gitlab account first
+Prerequisite: 
+- python3
+- python3-pip: ``` apt install -y python3-pip ```
+- ansible: ``` pip3 install ansible --break-system-packages```
+- DigitalOcean API Token (full access)
+- Check your python3 path (```which python3```) then put it in ./hosts (ansible_python_interpreter=/usr/bin/python3)
+
+Please clone/fork this project to your personal github/gitlab account first
 ```git clone https://github.com/SothyLorn/ansible-taskmate-setup.git```
 
 I. Update environment variables or File 
