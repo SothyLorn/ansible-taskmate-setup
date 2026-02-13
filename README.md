@@ -137,5 +137,5 @@ II. Run ansible playbook
 ansible-playbook ansible/setup-server.yml -i ansible/hosts
 ```
 ```bash
-ansible-playbook ansible/setup-taskmate.yml -i ansible/custom_hosts -e website=demo-ansible.sothy.site
+ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook ansible/setup-taskmate.yml -i ansible/custom_hosts -e website=demo-ansible.sothy.site
 ```
